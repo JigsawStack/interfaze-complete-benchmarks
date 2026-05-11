@@ -7,6 +7,7 @@ benchmark lives in its own directory under `benchmarks/`.
 
 ```bash
 uv sync
+uv run playwright install chromium   # required for olmOCR equation rendering
 ```
 
 Create a `.env` in the repo root with whichever provider keys you plan to use:

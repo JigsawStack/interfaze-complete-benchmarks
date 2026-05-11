@@ -25,6 +25,7 @@ def invoke_interfaze(
     stream: bool = False,
     structured_response: bool = False,
     structure_definition: BaseModel | None = None,
+    **kwargs,
 ) -> dict:
     """For invoking interfaze with images you can use
     messages = [
@@ -42,11 +43,13 @@ def invoke_interfaze(
         structure_definition=ResponseModel
     )
     """
+    extra = {k: v for k, v in kwargs.items() if v is not None}
     try:
         response = interfaze_client.chat.completions.create(
             model=model,
             messages=messages,
             stream=stream,
+            **extra,
         )
 
         return response
