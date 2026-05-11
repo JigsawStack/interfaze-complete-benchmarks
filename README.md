@@ -1,4 +1,6 @@
-# interfaze-complete-benchmarks
+# Interfaze complete benchmark scripts
+
+[Full break down blog](https://interfaze.ai/blog/interfaze-a-new-model-architecture-built-for-high-accuracy-at-scale) | [Leaderboard](https://interfaze.ai/leaderboards)
 
 Runner scripts for the public benchmarks Interfaze is evaluated on. Each
 benchmark lives in its own directory under `benchmarks/`.
