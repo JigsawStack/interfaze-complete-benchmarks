@@ -7,9 +7,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-if (GEMINI_API_KEY := os.getenv("GEMINI_API_KEY", None)) is None:
+GEMINI_API_KEY = (
+    os.getenv("GEMINI_KEY") or os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+)
+if not GEMINI_API_KEY:
     raise ValueError(
-        "GEMINI_API_KEY is not set in environment variables get it from https://aistudio.google.com/apikey"
+        "GEMINI_KEY/GEMINI_API_KEY is not set in environment variables get it from https://aistudio.google.com/apikey"
     )
 
 gemini_client = genai.Client(api_key=GEMINI_API_KEY)
