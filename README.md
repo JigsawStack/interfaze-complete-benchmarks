@@ -66,11 +66,20 @@ uv run -m benchmarks.olmocr.olmocr_bench
 uv run -m benchmarks.olmocr.olmocr_bench_openai_mini
 uv run -m benchmarks.olmocr.olmocr_bench_gemini_pro_31
 uv run -m benchmarks.olmocr.olmocr_bench_grok
+uv run -m benchmarks.olmocr.olmocr_bench_chandra_ocr2
 
 # Useful flags
 uv run -m benchmarks.olmocr.olmocr_bench --sample           # tiny sample dataset
 uv run -m benchmarks.olmocr.olmocr_bench --generate-only    # predictions only
 uv run -m benchmarks.olmocr.olmocr_bench --skip-generation  # evaluation only
+```
+
+`olmocr_bench_chandra_ocr2` dispatches to a self-hosted `datalab-to/chandra-ocr-2`
+vLLM endpoint. Required env:
+
+```
+CHANDRA_MODAL_URL=https://<workspace>--mlt-chandra-ocr-chandraocr-api.modal.run
+CHANDRA_MODAL_ADMIN_KEY=<admin-key>
 ```
 
 ---
